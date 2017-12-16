@@ -1,0 +1,500 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("HttpInputEventParser.h" include nil nil [1 34])
+            ("HttpInputQueue.h" include nil nil [35 62])
+            ("Logger.h" include nil nil [63 82])
+            ("JsonParser.h" include nil nil [83 106])
+            ("CharacterClass.h" include nil nil [107 134])
+            ("AppendStr.h" include nil nil [135 157])
+            ("PipelineData.h" include nil nil [158 183])
+            ("PipelineDataFromJson.h" include nil nil [184 217])
+            ("PipelineComponent.h" include nil nil [218 248])
+            ("PipelineSet.h" include nil nil [249 273])
+            ("ComponentData.h" include nil nil [274 300])
+            ("HTTPServer.h" include nil nil [301 324])
+            ("assert.h" include (:system-flag t) nil [325 344])
+            ("gLogger" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :type ("Logger" type (:type "class") nil nil))
+                nil [346 392])
+            ("JsonOpeningBracketChar" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :default-value "'{'"
+                :type "char")
+                nil [430 477])
+            ("JsonClosingBracketChar" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :default-value "'}'"
+                :type "char")
+                nil [478 525])
+            ("MintSourceTypeActionPrefix" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"sourcetype::mint:\""
+                :type ("Str" type (:type "class") nil nil))
+                nil [527 593])
+            ("MintRemoteIpMagicString" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"{%#@@#%}\""
+                :type ("Str" type (:type "class") nil nil))
+                nil [594 648])
+            ("HttpInputEventParser::TimestampKey" variable
+               (:constant-flag t
+                :default-value "\"time\""
+                :type ("Str" type (:type "class") nil nil))
+                nil [731 786])
+            ("HttpInputEventParser::HostKey" variable
+               (:constant-flag t
+                :default-value "\"host\""
+                :type ("Str" type (:type "class") nil nil))
+                nil [787 842])
+            ("HttpInputEventParser::SourceKey" variable
+               (:constant-flag t
+                :default-value "\"source\""
+                :type ("Str" type (:type "class") nil nil))
+                nil [843 900])
+            ("HttpInputEventParser::SourceTypeKey" variable
+               (:constant-flag t
+                :default-value "\"sourcetype\""
+                :type ("Str" type (:type "class") nil nil))
+                nil [901 962])
+            ("HttpInputEventParser::IndexKey" variable
+               (:constant-flag t
+                :default-value "\"index\""
+                :type ("Str" type (:type "class") nil nil))
+                nil [963 1019])
+            ("HttpInputEventParser::EventKey" variable
+               (:constant-flag t
+                :default-value "\"event\""
+                :type ("Str" type (:type "class") nil nil))
+                nil [1020 1076])
+            ("HttpInputEventParser::RemoteIPKey" variable
+               (:constant-flag t
+                :default-value "\"remote_ip\""
+                :type ("Str" type (:type "class") nil nil))
+                nil [1077 1137])
+            ("HttpInputEventParser::FieldsKey" variable
+               (:constant-flag t
+                :default-value "\"fields\""
+                :type ("Str" type (:type "class") nil nil))
+                nil [1138 1195])
+            ("HttpInputEventParser" function
+               (:constructor-flag t
+                :parent "HttpInputEventParser"
+                :type ("HttpInputEventParser" type (:type "class") nil nil))
+                nil [1197 1369])
+            ("recomputeConfKeyOn" function
+               (:methodconst-flag t
+                :parent "HttpInputEventParser"
+                :arguments 
+                  ( ("wpd" variable
+                       (:pointer 1
+                        :type ("PipelineData" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1417 1435]))                  
+                :type "void")
+                nil [1371 2081])
+            ("MintEventsParser" type
+               (:superclasses 
+                  ( ("JsonStreamingParser" type
+                       (:protection "public"
+                        :type "class")
+                        nil nil))                  
+                :members 
+                  ( ("public" label nil (reparse-symbol classsubparts) [2386 2393])
+                    ("MintEventsParser" function
+                       (:constructor-flag t
+                        :arguments 
+                          ( ("common" variable
+                               (:reference 1
+                                :type ("HttpInputEventParser" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [2415 2444])
+                            ("queue" variable
+                               (:reference 1
+                                :type ("HttpInputQueue" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [2445 2467])
+                            ("remoteIp" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("Str" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [2468 2488]))                          
+                        :type ("MintEventsParser" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2398 2557])
+                    ("parse" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("data" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("Str" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [2602 2618]))                          
+                        :type ("HttpInputEventParser::Status" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2567 2619])
+                    ("gotEndOfBlock" function
+                       (:typemodifiers ("virtual")
+                        :type ("AfterBlockAction" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2629 2772])
+                    ("private" label nil (reparse-symbol classsubparts) [2778 2786])
+                    ("_common" variable (:type ("HttpInputEventParser" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2791 2821])
+                    ("_queue" variable (:type ("HttpInputQueue" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2826 2849])
+                    ("_remoteIp" variable (:type ("Str" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2854 2868])
+                    ("Header" type
+                       (:members 
+                          ( ("raw" variable (:type ("StrSegment" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2923 2938])
+                            ("version" variable (:type ("StrSegment" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2977 2996])
+                            ("action" variable (:type ("StrSegment" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3034 3052])
+                            ("time" variable (:type ("StrSegment" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3077 3093]))                          
+                        :type "struct")
+                        (reparse-symbol classsubparts) [2878 3127])
+                    ("insertOneEvent" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("cpd" variable
+                               (:reference 1
+                                :type ("CowPipelineData" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [3157 3178])
+                            ("header" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("Header" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [3179 3207]))                          
+                        :type "bool")
+                        (reparse-symbol classsubparts) [3137 3208])
+                    ("parseHeader" function
+                       (:methodconst-flag t
+                        :arguments 
+                          ( ("data" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [3233 3250])
+                            ("dataLen" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3251 3266]))                          
+                        :type ("Header" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3214 4167])
+                    ("parseHeaderWhitespace" function
+                       (:methodconst-flag t
+                        :arguments 
+                          ( ("data" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [4204 4221])
+                            ("dataLen" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4222 4237])
+                            ("offset" variable
+                               (:reference 1
+                                :type ("size_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [4238 4253]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [4177 4362])
+                    ("parseHeaderNumber" function
+                       (:methodconst-flag t
+                        :arguments 
+                          ( ("data" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [4397 4414])
+                            ("dataLen" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4415 4430])
+                            ("offset" variable
+                               (:reference 1
+                                :type ("size_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [4431 4446]))                          
+                        :type ("StrSegment" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4368 4782])
+                    ("parseHeaderString" function
+                       (:methodconst-flag t
+                        :arguments 
+                          ( ("data" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [4821 4838])
+                            ("dataLen" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4839 4854])
+                            ("delimiter" variable (:type "char") (reparse-symbol arg-sub-list) [4855 4870])
+                            ("offset" variable
+                               (:reference 1
+                                :type ("size_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [4871 4886]))                          
+                        :type ("StrSegment" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4792 5238])
+                    ("parseHeaderExpectChar" function
+                       (:methodconst-flag t
+                        :arguments 
+                          ( ("data" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [5275 5292])
+                            ("dataLen" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5293 5308])
+                            ("expectedChar" variable (:type "char") (reparse-symbol arg-sub-list) [5309 5327])
+                            ("offset" variable
+                               (:reference 1
+                                :type ("size_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [5328 5343]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [5248 5688]))                  
+                :type "class")
+                nil [2332 5691])
+            ("parse" function
+               (:parent "MintEventsParser"
+                :arguments 
+                  ( ("data" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("Str" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5746 5762]))                  
+                :type ("HttpInputEventParser::Status" type (:type "class") nil nil))
+                nil [5693 8072])
+            ("insertOneEvent" function
+               (:parent "MintEventsParser"
+                :arguments 
+                  ( ("cpd" variable
+                       (:reference 1
+                        :type ("CowPipelineData" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8112 8133])
+                    ("header" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("Header" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8134 8162]))                  
+                :type "bool")
+                nil [8074 8885])
+            ("JsonEventsParser" type
+               (:superclasses 
+                  ( ("PipelineDataFromJsonParser" type
+                       (:protection "public"
+                        :type "class")
+                        nil nil))                  
+                :members 
+                  ( ("public" label nil (reparse-symbol classsubparts) [9462 9469])
+                    ("JsonEventsParser" function
+                       (:constructor-flag t
+                        :arguments 
+                          ( ("common" variable
+                               (:reference 1
+                                :type ("HttpInputEventParser" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [9491 9520])
+                            ("queue" variable
+                               (:reference 1
+                                :type ("HttpInputQueue" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [9521 9543]))                          
+                        :type ("JsonEventsParser" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [9474 9739])
+                    ("private" label nil (reparse-symbol classsubparts) [9740 9748])
+                    ("gotEvent" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("cpd" variable
+                               (:reference 1
+                                :type ("CowPipelineData" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [9767 9788]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [9753 9789])
+                    ("indexRequested" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("idxname" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("Str" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [9814 9833]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [9794 9834])
+                    ("NON_RETURNING_METHOD" variable (:type "int") (reparse-symbol classsubparts) [9879 9900])
+                    ("_common" variable (:type ("HttpInputEventParser" type (:type "class") nil nil)) (reparse-symbol classsubparts) [9906 9936])
+                    ("_queue" variable (:type ("HttpInputQueue" type (:type "class") nil nil)) (reparse-symbol classsubparts) [9941 9964])
+                    ("_indexOverriddenForThisEvent" variable (:type "bool") (reparse-symbol classsubparts) [11333 11367]))                  
+                :type "class")
+                nil [9401 11370])
+            ("insertAndClear" function
+               (:parent "HttpInputEventParser"
+                :arguments 
+                  ( ("queue" variable
+                       (:reference 1
+                        :type ("HttpInputQueue" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [11414 11436])
+                    ("cpd" variable
+                       (:reference 1
+                        :type ("CowPipelineData" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [11437 11458]))                  
+                :type "bool")
+                nil [11372 11531])
+            ("insertAndClearWithDone" function
+               (:parent "HttpInputEventParser"
+                :arguments 
+                  ( ("queue" variable
+                       (:reference 1
+                        :type ("HttpInputQueue" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [11583 11605])
+                    ("cpd" variable
+                       (:reference 1
+                        :type ("CowPipelineData" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [11606 11627]))                  
+                :type "bool")
+                nil [11533 11708])
+            ("gotEvent" function
+               (:parent "JsonEventsParser"
+                :arguments 
+                  ( ("cpd" variable
+                       (:reference 1
+                        :type ("CowPipelineData" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [11742 11763]))                  
+                :type "void")
+                nil [11710 13591])
+            ("indexRequested" function
+               (:parent "JsonEventsParser"
+                :arguments 
+                  ( ("idxname" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("Str" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [13631 13650]))                  
+                :type "void")
+                nil [13593 14062])
+            ("gotUnknownJsonKey" function
+               (:parent "JsonEventsParser"
+                :arguments 
+                  ( ("name" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("Str" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [14105 14121]))                  
+                :type "void")
+                nil [14064 14385])
+            ("RawEventParser" type
+               (:members 
+                  ( ("public" label nil (reparse-symbol classsubparts) [14495 14502])
+                    ("RawEventParser" function
+                       (:constructor-flag t
+                        :arguments 
+                          ( ("common" variable
+                               (:reference 1
+                                :type ("HttpInputEventParser" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [14522 14551])
+                            ("queue" variable
+                               (:reference 1
+                                :type ("HttpInputQueue" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [14552 14574]))                          
+                        :type ("RawEventParser" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [14507 14631])
+                    ("parse" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("data" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("Str" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [14676 14692]))                          
+                        :type ("HttpInputEventParser::Status" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [14641 14693])
+                    ("private" label nil (reparse-symbol classsubparts) [14694 14702])
+                    ("insertOneEvent" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("cpd" variable
+                               (:reference 1
+                                :type ("CowPipelineData" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [14727 14748]))                          
+                        :type "bool")
+                        (reparse-symbol classsubparts) [14707 14749])
+                    ("_common" variable (:type ("HttpInputEventParser" type (:type "class") nil nil)) (reparse-symbol classsubparts) [14755 14785])
+                    ("_queue" variable (:type ("HttpInputQueue" type (:type "class") nil nil)) (reparse-symbol classsubparts) [14790 14813]))                  
+                :type "class")
+                nil [14472 14816])
+            ("parse" function
+               (:parent "RawEventParser"
+                :arguments 
+                  ( ("data" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("Str" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [14868 14884]))                  
+                :type ("HttpInputEventParser::Status" type (:type "class") nil nil))
+                nil [14817 15720])
+            ("insertOneEvent" function
+               (:parent "RawEventParser"
+                :arguments 
+                  ( ("cpd" variable
+                       (:reference 1
+                        :type ("CowPipelineData" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [15758 15779]))                  
+                :type "bool")
+                nil [15722 16229])
+            ("parseJson" function
+               (:parent "HttpInputEventParser"
+                :arguments 
+                  ( ("body" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("AppendStr" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [16292 16314])
+                    ("queue" variable
+                       (:reference 1
+                        :type ("HttpInputQueue" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [16315 16337]))                  
+                :type ("HttpInputEventParser::Status" type (:type "class") nil nil))
+                nil [16231 17516])
+            ("parseMint" function
+               (:parent "HttpInputEventParser"
+                :arguments 
+                  ( ("body" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("AppendStr" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [17579 17601])
+                    ("queue" variable
+                       (:reference 1
+                        :type ("HttpInputQueue" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [17602 17624])
+                    ("ip" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("Str" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [17625 17639]))                  
+                :type ("HttpInputEventParser::Status" type (:type "class") nil nil))
+                nil [17518 17732])
+            ("parseRaw" function
+               (:parent "HttpInputEventParser"
+                :arguments 
+                  ( ("body" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("AppendStr" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [17794 17816])
+                    ("queue" variable
+                       (:reference 1
+                        :type ("HttpInputQueue" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [17817 17839]))                  
+                :type ("HttpInputEventParser::Status" type (:type "class") nil nil))
+                nil [17734 17926]))          
+      :file "HttpInputEventParser.cpp"
+      :pointmax 17927
+      :fsize 17926
+      :lastmodtime '(23087 4567 0 0)
+      :unmatched-syntax '((semantic-list 9861 . 9878) (symbol 9844 . 9861) (VOID 9839 . 9843) (string 368 . 390)))
+    (semanticdb-table "semanticdb-table"
+      :file "HttpInputEventParser.h"
+      :fsize 6461
+      :lastmodtime '(23087 4567 0 0))
+    (semanticdb-table "semanticdb-table"
+      :file "HttpInputQueue.h"
+      :fsize 2103
+      :lastmodtime '(23087 4567 0 0)))
+  :file "!Users!galster!main!src!pipeline!input!httpinput!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")
