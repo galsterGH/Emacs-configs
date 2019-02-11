@@ -1,3 +1,7 @@
+(setq inhibit-startup-screen t)
+(require 'cl)
+(set-language-environment "utf-8")
+
 (require 'package)
 (add-to-list 'package-archives
          '("melpa" . "http://melpa.org/packages/") t)
@@ -10,13 +14,13 @@
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
 
+(package-install 'flycheck)
+(global-flycheck-mode)
+
 (require 'use-package)
 (setq use-package-always-ensure t)
 
 (add-to-list 'load-path "~/.emacs.d/custom")
-
-;; add line numbers
-(global-linnum-mode t)
 
 (require 'setup-general)
 (if (version< emacs-version "24.4")
@@ -37,19 +41,13 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (zygospore helm-gtags helm yasnippet ws-butler volatile-highlights use-package undo-tree iedit dtrt-indent counsel-projectile company clean-aindent-mode anzu))))
+ '(package-selected-packages (quote (haskell-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-
-(setq inhibit-startup-screen t)
-(require 'cl)
-(set-language-environment "utf-8")
 
 (when (>= emacs-major-version 24)
   (require 'package)
@@ -80,15 +78,6 @@
           (package-install p)))))
 
 ;; Haskell
-(setq 
-        ghc-ghc-options '("-fno-warn-missing-signatures")
-        haskell-compile-cabal-build-command "cd %s && stack build"
-        haskell-process-type 'stack-ghci
-        haskell-interactive-popup-errors nil
-        haskell-process-args-stack-ghci '("--ghc-options=-ferror-spans" "--with-ghc=ghci-ng")
-        haskell-process-path-ghci "stack"
-)
-
 (defun my-haskell-hook ()
   (progn
     (interactive-haskell-mode)
@@ -97,18 +86,8 @@
 ))
 
 (add-hook 'haskell-mode-hook 'my-haskell-hook)
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (haskell-mode))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+
+
 
 (require 'ggtags)
 (add-hook 'c-mode-common-hook
@@ -157,9 +136,6 @@
 (setq company-backends (delete 'company-semantic company-backends))
 (define-key c-mode-map  [(tab)] 'company-complete)
 (define-key c++-mode-map  [(tab)] 'company-complete)
-
-((nil . ((company-clang-arguments . ("-I/home/<user>/project_root/include1/"
-                                     "-I/home/<user>/project_root/include2/")))))
-
 (add-to-list 'company-backends 'company-c-headers)
 
+(load "~/.emacs.d/cpp")
