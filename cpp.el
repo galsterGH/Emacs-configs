@@ -305,12 +305,6 @@
   (setq ivy-count-format "%d/%d ")
   )
 
-(use-package swiper
-  :ensure t
-  :bind (("C-s" . swiper)
-         ("C-r" . swiper))
-  )
-
 (use-package counsel
   :ensure t
   :bind (("M-x" . counsel-M-x)
@@ -1005,11 +999,11 @@ Please set my:ycmd-server-command appropriately in ~/.emacs.el.\n"
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Bazel-mode
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(if (not (file-exists-p "~/.emacs.d/plugins/bazel-mode.el"))
+(if (not (file-exists-p "~/.emacs.d/bazel-mode.el"))
     (url-copy-file
      "https://raw.githubusercontent.com/codesuki/bazel-mode/master/bazel-mode.el"
-     "~/.emacs.d/plugins/bazel-mode.el"))
-(if (file-exists-p "~/.emacs.d/plugins/bazel-mode.el")
+     "~/.emacs.d/bazel-mode.el"))
+(if (file-exists-p "~/.emacs.d/bazel-mode.el")
     (use-package bazel-mode
       :mode ("BUILD" "\\.bazel\\'" "\\.bzl'" "WORKSPACE\\'")
       )
@@ -1018,11 +1012,11 @@ Please set my:ycmd-server-command appropriately in ~/.emacs.el.\n"
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; protobuf-mode
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(if (not (file-exists-p "~/.emacs.d/plugins/protobuf-mode.el"))
+(if (not (file-exists-p "~/.emacs.d/protobuf-mode.el"))
     (url-copy-file
      "https://raw.githubusercontent.com/google/protobuf/master/editors/protobuf-mode.el"
-     "~/.emacs.d/plugins/protobuf-mode.el"))
-(if (file-exists-p "~/.emacs.d/plugins/protobuf-mode.el")
+     "~/.emacs.d/protobuf-mode.el"))
+(if (file-exists-p "~/.emacs.d/protobuf-mode.el")
     (use-package protobuf-mode
       :mode ("\\.proto")
       )
@@ -1059,6 +1053,12 @@ Please set my:ycmd-server-command appropriately in ~/.emacs.el.\n"
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Package: yasnippet
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(if (not (file-exists-p "~/.emacs.d/company-yasnippet.el"))
+    (url-copy-file
+     "https://github.com/company-mode/company-mode/blob/master/company-yasnippet.el"
+     "~/.emacs.d/company-yasnippet.el"))
+
+
 (use-package yasnippet
   :ensure t
   :commands (yas-reload-all)
@@ -1075,13 +1075,6 @@ Please set my:ycmd-server-command appropriately in ~/.emacs.el.\n"
   :after yasnippet
   :config
   (yas-reload-all))
-;; Apparently the company-yasnippet backend shadows all backends that
-;; come after it. To work around this we assign yasnippet to a different
-;; keybind since actual source completion is vital.
-(use-package company-yasnippet
-  :bind ("C-M-y" . company-yasnippet)
-  :after (yasnippet)
-  )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Load asm-mode when opening assembly files
@@ -1143,7 +1136,7 @@ Please set my:ycmd-server-command appropriately in ~/.emacs.el.\n"
 (use-package sourcerer-theme
   :ensure t
   :config
-  (load-theme 'sourcerer t))
+  (load-theme 'adwaita t))
 
 (set-face-background 'hl-line "#372E2D")
 ;; The minibuffer default colors with my theme are impossible to read, so change
@@ -1177,7 +1170,7 @@ Please set my:ycmd-server-command appropriately in ~/.emacs.el.\n"
 
 ;; Hide the scroll bar
 (scroll-bar-mode -1)
-(defvar my-font-size 90)
+(defvar my-font-size 130)
 ;; Make mode bar small
 (set-face-attribute 'mode-line nil  :height my-font-size)
 ;; Set the header bar font

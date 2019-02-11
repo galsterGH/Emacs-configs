@@ -41,13 +41,31 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (haskell-mode))))
+ '(git-gutter:update-interval 5)
+ '(package-selected-packages (quote (pt powerline haskell-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(default ((((type tty) (background dark)) (:background "nil"))))
+ '(company-preview ((t (:background "#073642" :foreground "#2aa198"))))
+ '(company-preview-common ((t (:foreground "#93a1a1" :underline t))))
+ '(company-scrollbar-bg ((t (:background "#073642" :foreground "#2aa198"))))
+ '(company-scrollbar-fg ((t (:foreground "#002b36" :background "#839496"))))
+ '(company-template-field ((t (:background "#7B6000" :foreground "#073642"))))
+ '(company-tooltip ((t (:background "black" :foreground "DeepSkyBlue1"))))
+ '(company-tooltip-annotation ((t (:foreground "#93a1a1" :background "#073642"))))
+ '(company-tooltip-common ((t (:foreground "#93a1a1" :underline t))))
+ '(company-tooltip-common-selection ((t (:foreground "#93a1a1" :underline t))))
+ '(company-tooltip-mouse ((t (:background "DodgerBlue4" :foreground "CadetBlue1"))))
+ '(company-tooltip-selection ((t (:background "DodgerBlue4" :foreground "CadetBlue1"))))
+ '(header-line ((t (:background "#003366"))))
+ '(ivy-minibuffer-match-face-1 ((((class color) (background light)) (:background "#555555")) (((class color) (background dark)) (:background "#555555"))))
+ '(ivy-minibuffer-match-face-2 ((t (:background "#314f30" :weight bold))))
+ '(ivy-minibuffer-match-face-3 ((t (:background "#48225b" :weight bold))))
+ '(ivy-minibuffer-match-face-4 ((t (:background "#680a0a" :weight bold))))
+ '(which-func ((t (:foreground "#8fb28f")))))
 
 (when (>= emacs-major-version 24)
   (require 'package)
@@ -138,6 +156,16 @@
 (define-key c++-mode-map  [(tab)] 'company-complete)
 (add-to-list 'company-backends 'company-c-headers)
 
+
+
+
 (load-file "~/.emacs.d/flymake-easy.el")
 (load-file "~/.emacs.d/cpp.el")
+
+(if (not (file-exists-p "~/.emacs.d/pt.el"))
+    (url-copy-file
+     "https://raw.githubusercontent.com/bling/pt.el/master/pt.el"
+     "~/.emacs.d/pt.el"))
+(load-file "~/.emacs.d/pt.el")
+
 (add-hook 'haskell-mode-hook 'flymake-haskell-multi-load)
