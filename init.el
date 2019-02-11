@@ -138,4 +138,6 @@
 (define-key c++-mode-map  [(tab)] 'company-complete)
 (add-to-list 'company-backends 'company-c-headers)
 
-(load "~/.emacs.d/cpp")
+(load-file "~/.emacs.d/flymake-easy.el")
+(load-file "~/.emacs.d/cpp.el")
+(add-hook 'haskell-mode-hook 'flymake-haskell-multi-load)
