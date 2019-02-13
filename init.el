@@ -22,14 +22,14 @@
 
 (add-to-list 'load-path "~/.emacs.d/custom")
 
-(require 'setup-general)
+(load-file "setup-general.el")
 (if (version< emacs-version "24.4")
-    (require 'setup-ivy-counsel)
-  (require 'setup-helm)
-  (require 'setup-helm-gtags))
+    (load-file "setup-ivy-counsel.el")
+  (load-file "setup-helm.el")
+  (load-file "setup-helm-gtags.el"))
 ;; (require 'setup-ggtags)
-(require 'setup-cedet)
-(require 'setup-editing)
+(load-file "setup-cedet.el")
+(load-file "setup-editing.el")
 
 ;; function-args
 ;; (require 'function-args)
