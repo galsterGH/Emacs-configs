@@ -19,7 +19,7 @@
 (defvar my:jupyter_start_dir "/home/nils")
 
 ;; Compilation command for C/C++
-(defvar my:compile-command "clang++ -Wall -Wextra -std=c++14 ")
+(defvar my:compile-command "g++ -Wall -Wextra -std=c++17 ")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Set packages to install

@@ -2,6 +2,8 @@
 (require 'cl)
 (set-language-environment "utf-8")
 
+(add-to-list 'load-path "~/.emacs.d/")
+
 (require 'package)
 (add-to-list 'package-archives
          '("melpa" . "http://melpa.org/packages/") t)
@@ -14,6 +16,8 @@
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
 
+
+
 (package-install 'flycheck)
 (global-flycheck-mode)
 
@@ -22,14 +26,14 @@
 
 (add-to-list 'load-path "~/.emacs.d/custom")
 
-(load-file "setup-general.el")
+(load-file "~/.emacs.d/setup-general.el")
 (if (version< emacs-version "24.4")
-    (load-file "setup-ivy-counsel.el")
-  (load-file "setup-helm.el")
-  (load-file "setup-helm-gtags.el"))
+    (load-file "~/.emacs.d/setup-ivy-counsel.el")
+  (load-file "~/.emacs.d/setup-helm.el")
+  (load-file "~/.emacs.d/setup-helm-gtags.el"))
 ;; (require 'setup-ggtags)
-(load-file "setup-cedet.el")
-(load-file "setup-editing.el")
+(load-file "~/.emacs.d/setup-cedet.el")
+(load-file "~/.emacs.d/setup-editing.el")
 
 ;; function-args
 ;; (require 'function-args)
@@ -95,16 +99,7 @@
         (when (not (package-installed-p p))
           (package-install p)))))
 
-;; Haskell
-(defun my-haskell-hook ()
-  (progn
-    (interactive-haskell-mode)
-    (haskell-doc-mode)
-    (haskell-indentation-mode)
-))
-
-(add-hook 'haskell-mode-hook 'my-haskell-hook)
-
+(load-file "~/.emacs.d/haskell-interactive-mode.el")
 
 
 (require 'ggtags)
@@ -156,7 +151,7 @@
 (define-key c++-mode-map  [(tab)] 'company-complete)
 (add-to-list 'company-backends 'company-c-headers)
 
-
+(let ((stack-path (expand-file-name "~/.local/bin/stack"))) (setenv "PATH" (concat stack-path path-separator (getenv "PATH"))) (add-to-list 'exec-path stack-path))
 
 
 (load-file "~/.emacs.d/flymake-easy.el")
