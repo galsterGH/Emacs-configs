@@ -46,7 +46,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(git-gutter:update-interval 5)
- '(package-selected-packages (quote (pt powerline haskell-mode))))
+ '(package-selected-packages
+   (quote
+    (webkit-color-picker xwidgete w3 pt powerline haskell-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -164,3 +166,5 @@
 (load-file "~/.emacs.d/pt.el")
 
 (add-hook 'haskell-mode-hook 'flymake-haskell-multi-load)
+
+(add-hook 'w3-parse-hooks 'w3-tidy-page)
